@@ -1,8 +1,10 @@
 const statusByErrorCode = {
     'any.required': 400,
-    'string.min': 422,
-    'number.positive': 422,
-    'number.min': 422,
+    'string.min': 400,
+    'number.positive': 400,
+    'number.min': 400,
+    'string.empy': 400,
+    'string.email': 400,
     notFound: 404,
     invalidData: 400,
     alreadyExists: 409,

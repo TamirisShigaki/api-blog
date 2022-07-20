@@ -7,7 +7,6 @@ module.exports = async (email) => {
         raw: true,
     });
 
-    console.log(getUser);
     if (!getUser) return { error: { code: 'invalidData', message: 'Invalid fields' } }; 
        
     return getUser;

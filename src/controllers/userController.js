@@ -30,6 +30,15 @@ const token = JWT.sign({ data: user }, secret, jwtConfig);
 return res.status(201).json({ token });
 });
 
+const getAllUser = rescue(async (req, res, next) => {
+  const user = await service.user.getAllUser();
+
+  if (!user) return next(user.error);
+
+  return res.status(200).json(user);
+});
+
 module.exports = {
     create,
+    getAllUser,
 };

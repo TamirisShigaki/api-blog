@@ -13,6 +13,20 @@ const create = async (obj) => {
     }
 };
 
+const getAllUser = async () => {
+    try {
+        const getAll = await User.findAll({ 
+            attributes: { exclude: ['password'] },
+            raw: true,
+        });
+
+        return getAll;
+    } catch (error) {
+        return null;
+    }
+};
+
 module.exports = {
     create,
+    getAllUser,
 };

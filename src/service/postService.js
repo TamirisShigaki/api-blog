@@ -4,10 +4,10 @@ const config = require('../database/config/config');
 
 const sequelize = new Sequelize(config.development);
 
-const create = async ({ title, content, categoryIds }, idUser) => {
+const create = async ({ title, content, categoryIds }, userId) => {
     try {
         const newBlogPost = await sequelize.transaction(async (t) => {
-            const newBP = await BlogPost.create({ title, content, idUser }, { transaction: t });
+            const newBP = await BlogPost.create({ title, content, userId }, { transaction: t });
             const getCategories = categoryIds.map((category) => ({
                 postId: newBP.id,
                 categoryId: category,

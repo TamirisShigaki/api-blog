@@ -16,6 +16,15 @@ const create = rescue(async (req, res, next) => {
     return res.status(201).json(category);
 });
 
+const getAllCategory = rescue(async (req, res, next) => {
+    const category = await service.category.getAllCategory(req.body);
+
+    if (!category) return next(category.error);
+
+    return res.status(200).json(category);
+});
+
 module.exports = {
     create,
+    getAllCategory,
 };

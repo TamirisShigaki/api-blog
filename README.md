@@ -1,4 +1,10 @@
-# 🚧 README em construção 🚧
+# 🚧 Readme em construção 🚧
+
+## 27 – Projeto API blogs
+
+## Contexto
+
+Projeto pessoal desenvolvido na Trybe, onde tive que criar uma API RESTful de blog usando a arquitetura MSC (Model-Service-Controller). A conexão foi feita com o ORM Sequelize e a autenticação com Json Web Token.
 
 <!-- Olá, Tryber!
 
